@@ -1,64 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <title>New Website</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="logo">News</div>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Sports</a></li>
-          <li><a href="#">Business</a></li>
-          <li><a href="#">Technology</a></li>
-        </ul>
-      </nav>
-    </header>
-    <section class="topHeadlines">
-      <article class="left">
-        <div class="title">
-          <h2>Breaking News</h2>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News Website</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">News</div>
+
+    <!-- Hamburger Menu -->
+    <button class="hamburger-menu" id="btn-menu">
+      <span class="hamburger-menu-content" tabindex="-1">
+        <span class="sr-only">Menu</span>
+
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <nav class="nav-menu" id="main-navigation">
+      <a class="back-btn" id="back-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 18L9 12L15 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Business</a></li>
+        <li><a href="#">Technology</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="topHeadlines">
+    <!-- LEFT -->
+    <article class="left">
+      <div class="img-container">
+        <img src="images/headline.avif" alt="dog-image" />
+
+        <div class="text-overlay">
+          <h1>
+            Woman who stole dog in ‘violent swarming attack’ sentenced by B.C. judge
+          </h1>
+
+          <p class="description">
+            A B.C. woman who stole her neighbour’s dog in a “violent swarming attack”
+            was convicted of robbery but won’t serve any time behind bars.
+          </p>
         </div>
+      </div>
+    </article>
 
-        <div class="img" id="breakingImg"></div>
-
-        <div class="text" id="breakingNews">
-          <div class="title">
-            <h3>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam,
-              facilis?
-            </h3>
+    <!-- RIGHT -->
+    <article class="right">
+      <!-- top headline -->
+      <article class="top">
+        <div class="img-container">
+          <img src="images/top-hl.avif" alt="image" width="100%">
+          <div class="text-overlay">
+            <h2>Dalhousie professors help bring Woody to life after mechanical malfunction</h2>
+            <p>University professors in Halifax swooped in and used their “mechanical magic” to help bring a beloved tradition to life this holiday season.</p>
           </div>
 
-          <div class="description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint eius
-            non, voluptatem vitae quos explicabo!
-          </div>
+
         </div>
       </article>
-
-      <article class="right">
-        <div class="title">
-          <h2>Top Headlines</h2>
-        </div>
-
-        <div class="topNews">
-          <div class="news">
-            <div class="img"></div>
-
-            <div class="text">
-              <div class="title">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Impedit, corporis.
-              </div>
-            </div>
+      <!-- botton headline -->
+      <article class="top">
+        <div class="img-container">
+          <img src="images/bottom-hl.avif" alt="image" width="100%">
+          <div class="text-overlay">
+            <h2>Inside the Royal Family Christmas: Who’s in, and who’s out</h2>
+            <p>Royal commentator Afua Hagen writes, as King Charles gets ready to host his second Christmas as King, one big question lingers: who will make it into the inner circle at Sandringham, and more importantly – who will be left out?</p>
           </div>
+
+
         </div>
       </article>
-    </section>
-  </body>
+    </article>
+  </section>
+
+  <section class="page2">
+    <article class="news">
+      <div class="title">
+        <h2>Sports News</h2>
+      </div>
+      <div class="newsBox" id="sportsNews"></div>
+    </article>
+
+    <article class="news">
+      <div class="title">
+        <h2>Business News</h2>
+      </div>
+      <div class="newsBox" id="businessNews"></div>
+    </article>
+
+    <article class="news">
+      <div class="title">
+        <h2>Technology News</h2>
+      </div>
+      <div class="newsBox" id="techNews"></div>
+    </article>
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+
 </html>
