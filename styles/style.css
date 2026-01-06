@@ -254,6 +254,7 @@ nav ul li a {
     grid-template-columns: 1fr 1fr;
   } */
 }
+
 @media screen and (max-width: 1440px) and (min-width: 1025px) {
   .topHeadlines {
     display: flex;
