@@ -143,6 +143,8 @@ nav ul li a {
 /* SPORTS SIDE BAR */
 .sidebar {
   flex: 1;
+  display: flex;
+  flex-direction: row;
   background: black;
   padding: 20px;
   border-left: 4px solid #1e88e5;
@@ -153,8 +155,22 @@ nav ul li a {
   color: #1e88e5;
 }
 
+small {
+  color: lightgray;
+} 
+
 .sports-article {
   margin-bottom: 15px;
+  width: 25%;
+  padding: 5px;
+  margin: 5px;
+  border: #777 2px solid;
+}
+
+.sports-article:hover {
+  cursor: pointer;
+  border: #1e88e5 5px solid;
+  padding: 10px;
 }
 
 .sports-article h4 {
@@ -162,7 +178,7 @@ nav ul li a {
 }
 
 .sports-article img {
-  width: 50%;
+  width: 100%;
   border-radius: 4px;
   margin-bottom: 8px;
 }
