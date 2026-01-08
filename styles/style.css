@@ -292,6 +292,10 @@ small {
     border-left: none;
     border-top: 4px solid #1e88e5;
   }
+
+  .news-article {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 600px) {
