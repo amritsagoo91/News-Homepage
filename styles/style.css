@@ -184,6 +184,31 @@ small {
   margin-bottom: 8px;
 }
 
+/* SPONSORED NEWS */
+.sponsered-news {
+  padding: 50px;
+}
+
+.sponsered-news h2 {
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+
+.sponsered-news h3 {
+  margin-bottom: 20px;
+}
+
+.personal-articles{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.personal-articles article{
+  flex: 1 1 45%;
+  margin: 10px;
+  padding: 10px;
+}
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {
