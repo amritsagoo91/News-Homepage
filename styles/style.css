@@ -198,6 +198,10 @@ small {
   margin-bottom: 20px;
 }
 
+.sponsered-news img {
+  height: 200px;
+}
+
 .personal-articles{
   display: flex;
   flex-direction: row;
