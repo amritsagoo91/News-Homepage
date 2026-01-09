@@ -311,7 +311,6 @@ nav ul li a {
   }
 }
 
-<<<<<<< HEAD
 @media screen and (max-width: 600px) {
   .text-overlay p {
     display: none;
@@ -364,11 +363,8 @@ nav ul li a {
   } */
 }
 
-@media screen and (max-width: 1440px) and (min-width: 1025px) {
-=======
 /* Small Laptops */
 @media (max-width: 1024px) {
->>>>>>> 53c7470 (Style Sheet fixed)
   .topHeadlines {
     display: flex;
     flex-direction: column;
