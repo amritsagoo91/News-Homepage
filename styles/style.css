@@ -168,7 +168,7 @@ small {
   tex
 }
 
-.news-article:hogiver {
+.news-article:hover {
   cursor: pointer;
   border: #1e88e5 5px solid;
   padding: 10px;
