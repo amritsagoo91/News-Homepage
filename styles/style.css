@@ -336,6 +336,20 @@ small {
   transform: scale(1.03);
 }
 
+@media screen and (max-width: 1024px) {
+  .topHeadlines {
+    display: flex;
+    flex-direction: column;
+  }
+  .img-container {
+    margin-bottom: 2rem;
+  }
+  /* .topHeadlines .right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  } */
+}
+
 @media screen and (max-width: 1440px) and (min-width: 1025px) {
   .topHeadlines {
     display: flex;
