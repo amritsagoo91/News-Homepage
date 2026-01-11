@@ -27,7 +27,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
+  z-index: 100;
 }
 
 .logo {
@@ -37,11 +37,11 @@ body {
 
 nav ul {
   display: flex;
+  gap: 15px;
 }
 
 nav ul li {
   list-style: none;
-  margin: 0 15px;
 }
 
 nav ul li a {
@@ -55,34 +55,22 @@ nav ul li a {
 ===================== */
 .hamburger-menu {
   display: none;
-  cursor: pointer;
   background: none;
   border: none;
-  z-index: 101;
+  cursor: pointer;
 }
 
 .bar {
-  display: block;
   width: 25px;
   height: 3px;
-  margin: 5px auto;
-  background-color: #fff;
-  transition: all 0.3s ease-in-out;
+  margin: 5px 0;
+  background: #fff;
+  transition: 0.3s;
 }
 
 .nav-menu {
   display: flex;
   gap: 1rem;
-  font-size: 1rem;
-}
-
-.back-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.2rem;
-  cursor: pointer;
 }
 
 /* =====================
@@ -109,7 +97,7 @@ nav ul li a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.35s ease-out;
+  transition: transform 0.35s ease;
 }
 
 .img-container:hover img {
@@ -119,7 +107,6 @@ nav ul li a {
 .text-overlay {
   position: absolute;
   bottom: 0;
-  left: 0;
   width: 100%;
   padding: 15px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
@@ -138,96 +125,72 @@ nav ul li a {
   font-size: 35px;
 }
 
+/* =====================
+   NEWS GRID
+===================== */
 .newsBox {
   display: flex;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.newsCard {
-  width: 20%;
-  background: #1f1f2a;
-}
-
-.newsCard img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
-
-.newsCard .text {
-  padding: 10px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.newsCard .text:hover {
-  text-decoration: underline;
-}
-
-/* =====================
-   SIDEBAR
-===================== */
-.sidebar {
-  display: flex;
-  flex-direction: row;
-  background: black;
-  padding: 20px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-around;
+  gap: 1.2rem;
   border-left: 4px solid #1e88e5;
-}
-
-.sidebar h2 {
-  color: #1e88e5;
-  margin-bottom: 15px;
+  padding-left: 1rem;
+  margin: 30px 0;
 }
 
 .news-article {
-  width: 25%;
-  margin: 5px;
-  padding: 5px;
-  border: 2px solid #777;
-}
-
-.news-article:hover {
+  flex: 1 1 200px;
+  max-width: 220px;
   cursor: pointer;
-  border: 5px solid #1e88e5;
-  padding: 10px;
+  position: relative;
 }
 
 .news-article img {
   width: 100%;
   height: 220px;
   border-radius: 4px;
+  object-fit: cover;
+}
+
+/* hover underline animation */
+.news-article::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #1e88e5;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.news-article:hover::after {
+  transform: scaleX(1);
 }
 
 /* =====================
    SPONSORED NEWS
 ===================== */
-.sponsered-news {
+.sponsored-news {
   padding: 50px;
 }
 
-.sponsered-news h2 {
+.sponsored-news h2 {
   font-size: 35px;
   margin-bottom: 20px;
-}
-
-.sponsered-news h3 {
-  margin-bottom: 20px;
-}
-
-.sponsered-news img {
-  height: 200px;
 }
 
 .personal-articles {
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .personal-articles article {
   flex: 1 1 45%;
-  margin: 10px;
   padding: 10px;
 }
 
@@ -235,7 +198,7 @@ nav ul li a {
    FOOTER
 ===================== */
 .site-footer {
-  background-color: #1e2a38;
+  background: #1e2a38;
   text-align: center;
   padding: 15px;
 }
@@ -253,23 +216,18 @@ nav ul li a {
 }
 
 /* =====================
-   MEDIA QUERIES
+   RESPONSIVE
 ===================== */
 
-/* Mobile */
-@media (max-width: 600px) {
-  .text-overlay p {
-    display: none;
-  }
-
-  .text-overlay h1,
-  .text-overlay h2 {
-    font-size: 1rem;
-    line-height: 1.2;
+/* Tablets */
+@media (max-width: 1024px) {
+  .topHeadlines {
+    display: flex;
+    flex-direction: column;
   }
 }
 
-/* Tablet */
+/* Mobile & Tablet */
 @media (max-width: 768px) {
   .hamburger-menu {
     display: block;
@@ -279,12 +237,12 @@ nav ul li a {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 35%;
+    width: 70%;
     height: 100vh;
     flex-direction: column;
     padding: 60px 20px;
-    background: rgba(11, 11, 17, 0.9);
-    transition: right 0.3s ease-in-out;
+    background: rgba(11, 11, 17, 0.95);
+    transition: right 0.3s ease;
   }
 
   .nav-menu.active {
@@ -293,26 +251,27 @@ nav ul li a {
 
   nav ul {
     flex-direction: column;
-    gap: 16px;
   }
 
   body.menu-open {
     overflow: hidden;
   }
 
-  .sidebar {
-    flex-direction: column;
+  .newsBox {
     border-left: none;
     border-top: 4px solid #1e88e5;
+    padding-left: 0;
+    padding-top: 1rem;
   }
 
   .news-article {
-    width: 100%;
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 
-<<<<<<< HEAD
-@media screen and (max-width: 600px) {
+/* Small phones */
+@media (max-width: 600px) {
   .text-overlay p {
     display: none;
   }
@@ -320,71 +279,6 @@ nav ul li a {
   .text-overlay h1,
   .text-overlay h2 {
     font-size: 1rem;
-    margin-bottom: 0.25rem;
-  }
-  .text-overlay {
-    padding: 10px;
-  }
-  .text-overlay h1,
-  .text-overlay h2 {
     line-height: 1.2;
-  }
-}
-
-.img-container {
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-}
-
-.img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: all 0.35s ease-out;
-  transform-origin: center center;
-}
-
-.img-container:hover img {
-  transform: scale(1.03);
-}
-
-@media screen and (max-width: 1024px) {
-  .topHeadlines {
-    display: flex;
-    flex-direction: column;
-  }
-  .img-container {
-    margin-bottom: 2rem;
-  }
-  /* .topHeadlines .right {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  } */
-}
-
-@media screen and (max-width: 1440px) and (min-width: 1025px) {
-=======
-/* Small Laptops */
-@media (max-width: 1024px) {
->>>>>>> 53c7470 (Style Sheet fixed)
-  .topHeadlines {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-/* Large Screens */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .topHeadlines {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .topHeadlines .right {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
   }
 }
