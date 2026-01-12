@@ -1,325 +1,736 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News-Style Portfolio Homepage</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>News Website</title>
-  <link rel="stylesheet" href="styles/style.css" />
-</head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
 
-<body>
-  <header class="header">
-    <div class="logo">News</div>
+    <header class="header">
+      <div class="logo">News</div>
 
-    <!-- Hamburger Menu -->
-    <button class="hamburger-menu" id="btn-menu">
-      <span class="hamburger-menu-content" tabindex="-1">
-        <span class="sr-only">Menu</span>
+      <!-- Hamburger Menu -->
+      <button
+        class="hamburger-menu"
+        id="btn-menu"
+        aria-controls="main-navigation"
+        aria-expanded="false"
+        aria-label="Open menu"
+      >
+        <span class="hamburger-menu-content" tabindex="-1">
+          <span class="sr-only">Menu</span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </span>
+      </button>
 
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </button>
+      <nav class="nav-menu" id="main-navigation" aria-label="Primary">
+        <button
+          class="back-btn"
+          id="back-btn"
+          type="button"
+          aria-label="Close menu"
+        >
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M15 18L9 12L15 6"
+              stroke="#fff"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
 
-    <nav class="nav-menu" id="main-navigation">
-      <a class="back-btn" id="back-btn">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 18L9 12L15 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </a>
+        <ul>
+          <li><a href="#featured">Featured</a></li>
+          <li><a href="#sports">Sports</a></li>
+          <li><a href="#business">Business</a></li>
+          <li><a href="#tech">Technology</a></li>
+          <li><a href="#sponsored">Sponsored</a></li>
+        </ul>
+      </nav>
+    </header>
 
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Sports</a></li>
-        <li><a href="#">Business</a></li>
-        <li><a href="#">Technology</a></li>
-      </ul>
-    </nav>
-  </header>
+    <main id="content">
+      <!-- =======================
+        TOP STORIES / FEATURED
+    ======================== -->
+      <section class="topHeadlines" id="featured">
+        <!-- LEFT: BIG FEATURE -->
+        <article
+          class="lead-story"
+          data-category="Featured"
+          data-tags="b.c.,community,courts"
+          data-featured="true"
+        >
+          <div class="img-container">
+            <img
+              src="images/headline.avif"
+              alt="Dog being held (headline image)"
+            />
 
-  <section class="topHeadlines">
-    <!-- LEFT -->
-    <article class="left">
-      <div class="img-container">
-        <img src="images/headline.avif" alt="dog-image" />
+            <div class="text-overlay">
+              <div class="kicker">
+                <span class="badge badge--featured">Featured</span>
+                <span class="category">Community</span>
+                <span class="pipe" aria-hidden="true">•</span>
+                <time datetime="2026-01-11">Jan 11, 2026</time>
+              </div>
 
-        <div class="text-overlay">
-          <h1>
-            Woman who stole dog in ‘violent swarming attack’ sentenced by B.C. judge
-          </h1>
+              <h1 class="headline">
+                Woman who stole dog in “violent swarming attack” sentenced by
+                B.C. judge
+              </h1>
 
-          <p class="description">
-            A B.C. woman who stole her neighbour’s dog in a “violent swarming attack”
-            was convicted of robbery but won’t serve any time behind bars.
-          </p>
-        </div>
-      </div>
-    </article>
+              <p class="excerpt">
+                A B.C. woman who stole her neighbour’s dog in a “violent
+                swarming attack” was convicted of robbery but won’t serve any
+                time behind bars.
+              </p>
 
-    <!-- RIGHT -->
-    <article class="right">
-      <!-- top headline -->
-      <article class="top">
-        <div class="img-container">
-          <img src="images/top-hl.avif" alt="image" width="100%">
-          <div class="text-overlay">
-            <h2>Dalhousie professors help bring Woody to life after mechanical malfunction</h2>
-            <p>University professors in Halifax swooped in and used their “mechanical magic” to help bring a beloved tradition to life this holiday season.</p>
+              <details class="body">
+                <summary>Read full story</summary>
+                <p>
+                  This story is here mainly to showcase layout and CSS: the
+                  overlay gradient, responsive typography, and interactive hover
+                  cues. In A05 you can refactor this into reusable “article
+                  card” components and tighten up content consistency.
+                </p>
+                <p class="byline">
+                  By <span class="author">Newsroom Team</span> ·
+                  <span class="tags" aria-label="Tags"
+                    >#b.c. #community #courts</span
+                  >
+                </p>
+              </details>
+            </div>
           </div>
-        </div>
-      </article>
-      <!-- botton headline -->
-      <article class="top">
-        <div class="img-container">
-          <img src="images/bottom-hl.avif" alt="image" width="100%">
-          <div class="text-overlay">
-            <h2>Inside the Royal Family Christmas: Who’s in, and who’s out</h2>
-            <p>Royal commentator Afua Hagen writes, as King Charles gets ready to host his second Christmas as King, one big question lingers: who will make it into the inner circle at Sandringham, and more importantly – who will be left out?</p>
+        </article>
+
+        <!-- RIGHT: SECONDARY TOP STORIES -->
+        <aside class="top-rail" aria-label="Top stories">
+          <article
+            class="rail-story"
+            data-category="Campus"
+            data-tags="engineering,holiday,local"
+            data-featured="false"
+          >
+            <div class="img-container">
+              <img
+                src="images/top-hl.avif"
+                alt="Holiday display (top story image)"
+              />
+              <div class="text-overlay">
+                <div class="kicker">
+                  <span class="badge badge--live">Live</span>
+                  <span class="category">Campus</span>
+                  <span class="pipe" aria-hidden="true">•</span>
+                  <time datetime="2026-01-10">Jan 10, 2026</time>
+                </div>
+                <h2 class="headline">
+                  Dalhousie professors help bring Woody to life after mechanical
+                  malfunction
+                </h2>
+                <p class="excerpt">
+                  University professors in Halifax swooped in and used their
+                  “mechanical magic” to help bring a beloved tradition to life.
+                </p>
+                <details class="body">
+                  <summary>Read more</summary>
+                  <p>
+                    Demo body text for the assignment: this section exists so
+                    every article has a “Body” field without requiring a
+                    separate page.
+                  </p>
+                  <p class="byline">
+                    By <span class="author">Aisan</span> ·
+                    <span class="tags">#engineering #holiday #local</span>
+                  </p>
+                </details>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="rail-story"
+            data-category="Culture"
+            data-tags="royals,tradition,analysis"
+            data-featured="false"
+          >
+            <div class="img-container">
+              <img
+                src="images/bottom-hl.avif"
+                alt="Royal family photo (story image)"
+              />
+              <div class="text-overlay">
+                <div class="kicker">
+                  <span class="category">Culture</span>
+                  <span class="pipe" aria-hidden="true">•</span>
+                  <time datetime="2026-01-09">Jan 9, 2026</time>
+                </div>
+                <h2 class="headline">
+                  Inside the Royal Family Christmas: Who’s in, and who’s out
+                </h2>
+                <p class="excerpt">
+                  As King Charles prepares to host Christmas at Sandringham, one
+                  question lingers: who makes the inner circle?
+                </p>
+                <details class="body">
+                  <summary>Read more</summary>
+                  <p>
+                    Another demo body paragraph. Keep it short, readable, and
+                    consistent across cards.
+                  </p>
+                  <p class="byline">
+                    By <span class="author">Amrit</span> ·
+                    <span class="tags">#royals #tradition #analysis</span>
+                  </p>
+                </details>
+              </div>
+            </div>
+          </article>
+        </aside>
+      </section>
+
+      <!-- =======================
+        SECTIONS GRID
+    ======================== -->
+      <section class="page2" aria-label="Sections">
+        <!-- Sports -->
+        <section class="news" id="sports" aria-label="Sports section">
+          <div class="title">
+            <h2>Sports</h2>
+            <a
+              class="section-link"
+              href="#sportsNews"
+              aria-label="Jump to sports articles"
+              >View all</a
+            >
           </div>
 
+          <div class="newsBox" id="sportsNews">
+            <article
+              class="news-article"
+              data-category="Sports"
+              data-tags="hockey,finals,playoffs"
+            >
+              <img src="images/Hockey.jpg" alt="Hockey match" />
+              <h3 class="headline">Hockey Finals Heat Up</h3>
+              <p class="excerpt">
+                The championship series heads into a decisive game as both teams
+                remain tied after an intense matchup.
+              </p>
+
+              <details class="body">
+                <summary>Read more</summary>
+                <p>
+                  Tip/technique: Use CSS Grid for the overall page, and Flexbox
+                  for repeating card layouts like these.
+                </p>
+              </details>
+
+              <footer class="meta">
+                <span class="author" data-role="author">Andrew Walsh</span>
+                <time datetime="2026-01-11">Jan 11, 2026</time>
+                <ul class="tags" aria-label="Tags">
+                  <li>#hockey</li>
+                  <li>#finals</li>
+                  <li>#playoffs</li>
+                </ul>
+              </footer>
+            </article>
+
+            <article
+              class="news-article"
+              data-category="Sports"
+              data-tags="soccer,transfers,rumours"
+            >
+              <img src="images/Soccer.jpeg" alt="Soccer ball on field" />
+              <h3 class="headline">Soccer Transfer News</h3>
+              <p class="excerpt">
+                Top clubs are preparing major signings as the winter transfer
+                window opens.
+              </p>
+
+              <details class="body">
+                <summary>Read more</summary>
+                <p>
+                  Tip/technique: Use hover effects for affordance (underline
+                  slide-in, subtle image zoom, and a shadow lift).
+                </p>
+              </details>
+
+              <footer class="meta">
+                <span class="author" data-role="author">Candace Kile</span>
+                <time datetime="2026-01-11">Jan 11, 2026</time>
+                <ul class="tags" aria-label="Tags">
+                  <li>#soccer</li>
+                  <li>#transfers</li>
+                  <li>#rumours</li>
+                </ul>
+              </footer>
+            </article>
+
+            <article
+              class="news-article"
+              data-category="Sports"
+              data-tags="basketball,injury,return"
+            >
+              <img src="images/Basketball.jpg" alt="Basketball court" />
+              <h3 class="headline">Basketball Star Returns</h3>
+              <p class="excerpt">
+                After weeks of injury, a key player returns just in time for the
+                playoff push.
+              </p>
+
+              <details class="body">
+                <summary>Read more</summary>
+                <p>
+                  Tip/technique: Keep type scales consistent across breakpoints
+                  using clamp() for responsive headlines.
+                </p>
+              </details>
+
+              <footer class="meta">
+                <span class="author" data-role="author">Tim Salo</span>
+                <time datetime="2026-01-10">Jan 10, 2026</time>
+                <ul class="tags" aria-label="Tags">
+                  <li>#basketball</li>
+                  <li>#injury</li>
+                  <li>#return</li>
+                </ul>
+              </footer>
+            </article>
+
+            <article
+              class="news-article"
+              data-category="Sports"
+              data-tags="baseball,pitching,stats"
+            >
+              <img src="images/Baseball.jpg" alt="Baseball pitcher" />
+              <h3 class="headline">All-Star Pitcher Dominates</h3>
+              <p class="excerpt">
+                A standout performance helps lock in a playoff position heading
+                into a crucial stretch.
+              </p>
+
+              <details class="body">
+                <summary>Read more</summary>
+                <p>
+                  Project highlight: This card layout is reusable for a
+                  portfolio—swap content to showcase your own projects.
+                </p>
+              </details>
+
+              <footer class="meta">
+                <span class="author" data-role="author">Kwon Lu</span>
+                <time datetime="2026-01-09">Jan 9, 2026</time>
+                <ul class="tags" aria-label="Tags">
+                  <li>#baseball</li>
+                  <li>#pitching</li>
+                  <li>#stats</li>
+                </ul>
+              </footer>
+            </article>
+          </div>
+        </section>
+
+        <!-- Business -->
+        <section class="news" id="business" aria-label="Business section">
+          <div class="title">
+            <h2>Business</h2>
+            <a
+              class="section-link"
+              href="#businessNews"
+              aria-label="Jump to business articles"
+              >View all</a
+            >
+          </div>
+
+          <div class="newsBox" id="businessNews">
+            <article
+              class="news-article"
+              data-category="Business"
+              data-tags="markets,inflation,investing"
+            >
+              <img src="images/Stocks.jpg" alt="Stock chart" />
+              <h3 class="headline">Global Markets Rally as Inflation Cools</h3>
+              <p class="excerpt">
+                Investors respond positively to data suggesting price pressures
+                may be easing.
+              </p>
+
+              <details class="body">
+                <summary>Read more</summary>
+                <p>
+                  Tip/technique: Use CSS custom properties for your spacing
+                  scale, colors, and shadows—easy to tune later.
+                </p>
+              </details>
+
+              <footer class="meta">
+                <span class="author" data-role="author">Drew Cole</span>
+                <time datetime="2026-01-11">Jan 11, 2026</time>
+                <ul class="tags" aria-label="Tags">
+                  <li>#markets</li>
+                  <li>#inflation</li>
+                  <li>#investing</li>
+                </ul>
+              </footer>
+            </article>
+
+            <article
+              class="news-article"
+              data-category="Business"
+              data-tags="retail,closures,trend"
+            >
+              <img src="images/store.jpg" alt="Retail store" />
+              <h3 class="headline">
+                Major Retail Chains Announce Store Closures
+              </h3>
+              <p class="excerpt">
+                Companies restructure operations as consumer shopping habits
+                continue to evolve.
+              </p>
+
+              <details class="body">
+                <summary>Read more</summary>
+                <p>
+                  Tip/technique: Use container-ish wrappers (max-width + auto
+                  margins) to keep dense pages readable.
+                </p>
+              </details>
+
+              <footer class="meta">
+                <span class="author" data-role="author">Marty Hill</span>
+                <time datetime="2026-01-10">Jan 10, 2026</time>
+                <ul class="tags" aria-label="Tags">
+                  <li>#retail</li>
+                  <li>#closures</li>
+                  <li>#trend</li>
+                </ul>
+              </footer>
+            </article>
+
+            <article
+              class="news-article"
+              data-category="Business"
+              data-tags="smallbiz,costs,local"
+            >
+              <img src="images/Street.jpg" alt="City street" />
+              <h3 class="headline">
+                Small Businesses Struggle With Rising Costs
+              </h3>
+              <p class="excerpt">
+                Higher wages and supply expenses put pressure on local
+                entrepreneurs.
+              </p>
+
+              <details class="body">
+                <summary>Read more</summary>
+                <p>
+                  Project/technique: Try :focus-visible styles so keyboard users
+                  get clear navigation without noisy focus rings.
+                </p>
+              </details>
+
+              <footer class="meta">
+                <span class="author" data-role="author">Fate Hyne</span>
+                <time datetime="2026-01-09">Jan 9, 2026</time>
+                <ul class="tags" aria-label="Tags">
+                  <li>#smallbiz</li>
+                  <li>#costs</li>
+                  <li>#local</li>
+                </ul>
+              </footer>
+            </article>
+
+            <article
+              class="news-article"
+              data-category="Business"
+              data-tags="travel,airlines,pricing"
+            >
+              <img src="images/Plane.jpeg" alt="Airplane wing" />
+              <h3 class="headline">
+                Airlines Report Strong Travel Demand Despite Higher Ticket
+                Prices
+              </h3>
+              <p class="excerpt">
+                Pent-up travel interest offsets concerns over increased fuel and
+                labor costs.
+              </p>
+
+              <details class="body">
+                <summary>Read more</summary>
+                <p>
+                  Technique: Use responsive grids that “auto-fit” cards so your
+                  layout looks good from 320px to 1920px.
+                </p>
+              </details>
+
+              <footer class="meta">
+                <span class="author" data-role="author">Jericho Etrata</span>
+                <time datetime="2026-01-08">Jan 8, 2026</time>
+                <ul class="tags" aria-label="Tags">
+                  <li>#travel</li>
+                  <li>#airlines</li>
+                  <li>#pricing</li>
+                </ul>
+              </footer>
+            </article>
+          </div>
+        </section>
+
+        <!-- Technology -->
+        <section class="news" id="tech" aria-label="Technology section">
+          <div class="title">
+            <h2>Technology</h2>
+            <a
+              class="section-link"
+              href="#techNews"
+              aria-label="Jump to technology articles"
+              >View all</a
+            >
+          </div>
+
+          <div class="newsBox" id="techNews">
+            <article
+              class="news-article"
+              data-category="Technology"
+              data-tags="gpu,ai,pricing"
+            >
+              <img src="images/GPU.jpg" alt="Graphics card" />
+              <h3 class="headline">
+                Rising GPU Prices Due to Increase in AI Usage
+              </h3>
+              <p class="excerpt">
+                Demand for high-performance GPUs is driving up prices and
+                affecting availability for gamers and pros.
+              </p>
+
+              <details class="body">
+                <summary>Read more</summary>
+                <p>
+                  Project idea: Build a small “price tracker” UI and use CSS
+                  animations to highlight changes.
+                </p>
+              </details>
+
+              <footer class="meta">
+                <span class="author" data-role="author">Aidan Cheng</span>
+                <time datetime="2026-01-11">Jan 11, 2026</time>
+                <ul class="tags" aria-label="Tags">
+                  <li>#gpu</li>
+                  <li>#ai</li>
+                  <li>#pricing</li>
+                </ul>
+              </footer>
+            </article>
+
+            <article
+              class="news-article"
+              data-category="Technology"
+              data-tags="phones,battery,hardware"
+            >
+              <img src="images/Phones.jpg" alt="Smartphones" />
+              <h3 class="headline">
+                Smartphone Makers Focus on Longer Battery Life
+              </h3>
+              <p class="excerpt">
+                Energy efficiency becomes a key selling point in next-generation
+                devices.
+              </p>
+
+              <details class="body">
+                <summary>Read more</summary>
+                <p>
+                  Technique: Use :nth-child() to create subtle rhythm (staggered
+                  borders/accents) without extra classes.
+                </p>
+              </details>
+
+              <footer class="meta">
+                <span class="author" data-role="author">Lain Wong</span>
+                <time datetime="2026-01-10">Jan 10, 2026</time>
+                <ul class="tags" aria-label="Tags">
+                  <li>#phones</li>
+                  <li>#battery</li>
+                  <li>#hardware</li>
+                </ul>
+              </footer>
+            </article>
+
+            <article
+              class="news-article"
+              data-category="Technology"
+              data-tags="security,remote,work"
+            >
+              <img src="images/cybersecurity.jpg" alt="Cybersecurity" />
+              <h3 class="headline">
+                Cybersecurity Threats Increase as Remote Work Remains Widespread
+              </h3>
+              <p class="excerpt">
+                Experts warn organizations to strengthen digital defenses
+                against evolving attacks.
+              </p>
+
+              <details class="body">
+                <summary>Read more</summary>
+                <p>
+                  Tip: Use attribute selectors like [data-category="Technology"]
+                  for section-themed accents.
+                </p>
+              </details>
+
+              <footer class="meta">
+                <span class="author" data-role="author">Tomas Petterson</span>
+                <time datetime="2026-01-09">Jan 9, 2026</time>
+                <ul class="tags" aria-label="Tags">
+                  <li>#security</li>
+                  <li>#remote</li>
+                  <li>#work</li>
+                </ul>
+              </footer>
+            </article>
+
+            <article
+              class="news-article"
+              data-category="Technology"
+              data-tags="privacy,software,update"
+            >
+              <img src="images/app.jpg" alt="App icons" />
+              <h3 class="headline">
+                Major Software Update Aims to Improve User Privacy
+              </h3>
+              <p class="excerpt">
+                New features give consumers transparency over how their
+                information is used.
+              </p>
+
+              <details class="body">
+                <summary>Read more</summary>
+                <p>
+                  Technique: Use an animated “live” badge to draw attention
+                  without being distracting.
+                </p>
+              </details>
+
+              <footer class="meta">
+                <span class="author" data-role="author">Ryan Vu</span>
+                <time datetime="2026-01-08">Jan 8, 2026</time>
+                <ul class="tags" aria-label="Tags">
+                  <li>#privacy</li>
+                  <li>#software</li>
+                  <li>#update</li>
+                </ul>
+              </footer>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <!-- =======================
+        SPONSORED / PORTFOLIO
+    ======================== -->
+      <section
+        class="sponsored-news"
+        id="sponsored"
+        aria-label="Sponsored and portfolio articles"
+      >
+        <div class="title title--wide">
+          <h2>Sponsored / Portfolio</h2>
+          <p class="subtitle">
+            Two “project/tip” style articles (great to expand for A05).
+          </p>
         </div>
-      </article>
-    </article>
-  </section>
 
-  <section class="page2">
+        <section class="personal-articles">
+          <article
+            class="personal-card"
+            data-category="Project"
+            data-tags="mvc,csharp,teamwork"
+          >
+            <h3 class="headline">New Marketplace Website</h3>
+            <img
+              src="images/Marketplace.jpg"
+              alt="Marketplace website concept"
+            />
+            <p class="excerpt">
+              I’m working with a team to create a marketplace site for used
+              goods. Users will list items, message buyers, and complete
+              purchases.
+            </p>
+            <details class="body">
+              <summary>Read more</summary>
+              <p>
+                Stack: C# MVC, HTML, CSS. This project will help me improve web
+                development fundamentals, database concepts, and building
+                structured UI layouts.
+              </p>
+            </details>
 
-    <article class="news">
-      
-      <div class="title">
-        <h2>Sports News</h2>
-      </div>
-      <div class="newsBox" id="sportsNews">
-        <!-- <aside class="sidebar"> -->
+            <footer class="meta">
+              <span class="author" data-role="author">Aidan Cheng</span>
+              <time datetime="2025-12-20">Dec 20, 2025</time>
+              <ul class="tags" aria-label="Tags">
+                <li>#mvc</li>
+                <li>#csharp</li>
+                <li>#teamwork</li>
+              </ul>
+            </footer>
+          </article>
 
-        <article class="news-article">
-          <img src="images/Hockey.jpg" alt="Hockey" />
-          <h4>Hockey Finals Heat Up</h4>
-          <p>
-            The championship series heads into a decisive game as both teams
-            remain tied after an intense matchup.
-          </p>
-          <small>Andrew Walsh</small>
-          <br>
-          <small>News-Canada-Sports | 1 Hour Ago</small>
-        </article>
+          <article
+            class="personal-card"
+            data-category="Tip"
+            data-tags="images,licensing,workflow"
+          >
+            <h3 class="headline">Creative Commons Image Tool</h3>
+            <img src="images/CreativeCommons.png" alt="Creative Commons logo" />
+            <p class="excerpt">
+              When searching Google Images, use the “Tools” menu to filter by
+              usage rights and find Creative Commons content faster.
+            </p>
+            <details class="body">
+              <summary>Read more</summary>
+              <p>
+                Always verify the exact license before using an image. This
+                habit will save you time and keep your portfolio projects safe
+                to share publicly.
+              </p>
+            </details>
 
-        <article class="news-article">
-          <img src="images/Soccer.jpeg" alt="Soccer" />
-          <h4>Soccer Transfer News</h4>
-          <p>
-            Top clubs are preparing major signings as the winter transfer window
-            opens.
-          </p>
-          <small>Candace Kile</small>
-          <br>
-          <small>News-Canada-Sports | 3 Hours Ago</small>
-        </article>
+            <footer class="meta">
+              <span class="author" data-role="author">Aidan Cheng</span>
+              <time datetime="2026-01-02">Jan 2, 2026</time>
+              <ul class="tags" aria-label="Tags">
+                <li>#images</li>
+                <li>#licensing</li>
+                <li>#workflow</li>
+              </ul>
+            </footer>
+          </article>
+        </section>
+      </section>
 
-        <article class="news-article">
-          <img src="images/Basketball.jpg" alt="Basketball" />
-          <h4>Basketball Star Returns</h4>
-          <p>
-            After weeks of injury, a key player returns just in time for the
-            playoff push.
-          </p>
-          <small>Tim Salo</small>
-          <br>
-          <small>News-Canada-Sports | 5 Hours Ago</small>
-        </article>
+      <footer class="site-footer">
+        <p>&copy; 2026 SSDP-2850. All rights reserved.</p>
+      </footer>
+    </main>
 
-         <article class="news-article">
-          <img src="images/Baseball.jpg" alt="Baseball" />
-          <h4>All-Star Pitcher Dominates</h4>
-          <p>
-            This All-Star pitcher has been instrumental in leading his team to the playoffs with
-            his outstanding performance.
-          </p>
-          <small>Kwon Lu</small>
-          <br>
-          <small>News-Canada-Sports | 10 Hours Ago</small>
-        </article>
-
-        <article class="news-article">
-          <img src="images/Baseball.jpg" alt="Baseball" />
-          <h4>All-Star Pitcher Dominates</h4>
-          <p>
-            This All-Star pitcher has been instrumental in leading his team to the playoffs with
-            his outstanding performance.
-          </p>
-          <small>Kwon Lu</small>
-          <br>
-          <small>News-Canada-Sports | 10 Hours Ago</small>
-        </article>
-      <!-- </aside> -->
-    </div>
-    </article>
-     <article class="news">
-      <div class="title">
-        <h2>Business</h2>
-      </div>
-      <div class="newsBox" id="businessNews">
-        <!-- <aside class="sidebar"> -->
-
-        <article class="news-article">
-          <img src="images/Stocks.jpg" alt="Stocks" />
-          <h4>Global Markets Rally as Inflation Cools</h4>
-          <p>
-            Investors respond positively to new economic data suggesting price pressures may be easing.
-          </p>
-          <small>Drew Cole</small>
-          <br>
-          <small>News-Global-Business | 10 Hours Ago</small>
-        </article>
-
-        <article class="news-article">
-          <img src="images/store.jpg" alt="store" />
-          <h4>Major Retail Chains Announce Store Closures</h4>
-          <p>
-            Companies restructure operations as consumer shopping habits continue to evolve.
-          </p>
-          <small>Marty Hill</small>
-          <br>
-          <small>News-USA-Business | 6 Hours Ago</small>
-        </article>
-
-        <article class="news-article">
-          <img src="images/Street.jpg" alt="Street" />
-          <h4>Small Businesses Struggle With Rising Costs</h4>
-          <p>
-            Higher wages and supply expenses put pressure on local entrepreneurs.
-          </p>
-          <small>Fate Hyne</small>
-          <br>
-          <small>News-Canada-Business | 5 Hours Ago</small>
-        </article>
-
-        <article class="news-article">
-          <img src="images/Plane.jpeg" alt="Plane" />
-          <h4>Airlines Report Strong Travel Demand Despite Higher Ticket Prices</h4>
-          <p>
-            Pent-up travel interest offsets concerns over increased fuel and labor costs
-          </p>
-          <small>Jericho Etrata</small>
-          <br>
-          <small>News-Global-Business | 10 Hours Ago</small>
-        </article>
-        <article class="news-article">
-          <img src="images/Plane.jpeg" alt="Plane" />
-          <h4>Airlines Report Strong Travel Demand Despite Higher Ticket Prices</h4>
-          <p>
-            Pent-up travel interest offsets concerns over increased fuel and labor costs
-          </p>
-          <small>Jericho Etrata</small>
-          <br>
-          <small>News-Global-Business | 10 Hours Ago</small>
-        </article>
-        <!-- </aside> -->
-      </div>
-    </article>
-
-    <article class="news">
-      <div class="title">
-        <h2>Technology</h2>
-      </div>
-      <div class="newsBox" id="techNews">
-        <!-- <aside class="sidebar"> -->
-
-        <article class="news-article">
-          <img src="images/GPU.jpg" alt="GPU" />
-          <h4>Rising GPU Prices Due to Increase In AI Usage</h4>
-          <p>
-            AI has lead to a surge in demand for high-performance GPUs, driving up prices and affecting availability for gamers and professionals alike.
-          </p>
-          <small>Aidan Cheng</small>
-          <br>
-          <small>News-Global-Technology | 1 Hour Ago</small>
-        </article>
-
-        <article class="news-article">
-          <img src="images/Phones.jpg" alt="phone" />
-          <h4>Smartphone Manufacturers Focus on Longer Battery Life in New Releases</h4>
-          <p>
-            Energy efficiency becomes a key selling point in next-generation devices.
-          </p>
-          <small>Lain Wong</small>
-          <br>
-          <small>News-USA-Technology | 7 Hours Ago</small>
-        </article>
-
-        <article class="news-article">
-          <img src="images/cybersecurity.jpg" alt="cybersecurity" />
-          <h4>Cybersecurity Threats Increase as Remote Work Remains Widespread</h4>
-          <p>
-            Experts warn organizations to strengthen digital defenses against evolving attacks.
-          </p>
-          <small>Tomas Petterson</small>
-          <br>
-          <small>News-Global-Technology | 2 Hours Ago</small>
-        </article>
-
-        <article class="news-article">
-          <img src="images/app.jpg" alt="App" />
-          <h4>Major Software Update Aims to Improve User Privacy and Data Control</h4>
-          <p>
-            New features give consumers more transparency over how their information is used.
-          </p>
-          <small>Ryan Vu</small>
-          <br>
-          <small>News-Canada-Technology | 10 Hours Ago</small>
-        </article>
-
-        <article class="news-article">
-          <img src="images/app.jpg" alt="App" />
-          <h4>Major Software Update Aims to Improve User Privacy and Data Control</h4>
-          <p>
-            New features give consumers more transparency over how their information is used.
-          </p>
-          <small>Ryan Vu</small>
-          <br>
-          <small>News-Canada-Technology | 10 Hours Ago</small>
-        </article>
-        <!-- </aside> -->
-      </div>
-    </article>
-   </section>
-
-  <div class="sponsered-news">
-    <h2>Sponsered News</h2>
-    <section class="personal-articles">
-      <article>
-        <h3>New Marketplace Website</h2>
-        <img src="images/Marketplace.jpg" alt="Marketplace" />
-        <p>I am currently working with a team to create a marketplace type website, that sells used or second-hand goods. This site will allow
-        users to create accounts, list items for sale, and purchase items from other users. We are using C# with MVC with HTML and CSS to create the project. The project is still in its design stages, but we hope to start development soon.
-        This project will help me improve my skills in web development, database management, and MVC proficiency.
-        </p>
-        <br>
-        <small>Aidan Cheng</small>
-        <br>
-        <small>News-Canada-Business | December 20, 2025</small>
-      </article>
-      <article>
-        <h3>Creative Commons Image Tool</h2>
-        <img src="images/CreativeCommons.png" alt="Creative Commons" />
-        <p>When searching for images on Google Images if you want something with the creative commons licence then you can go to the tools section on the far right of the menu 
-        bar and select the usage rights dropdown. From there you can select the creative commons licence and it will filter out all images that do not have that licence.
-        This is a useful tool for finding images that can be used for free, but it is important to always check the specific licence for each image to ensure that you are using it correctly and legally.
-        </p>
-        <br>
-        <small>Aidan Cheng</small>
-        <br>
-        <small>News-Canada-Technology | January 2, 2026</small>
-      </article>
-    </section>
-  </div>
-
-  <footer class="site-footer">
-    <p>&copy; 2026 SSDP-2850. All rights reserved.</p>
-  </footer>
-
-  <script src="js/script.js"></script>
-</body>
-
+    <script src="js/script.js"></script>
+  </body>
 </html>
